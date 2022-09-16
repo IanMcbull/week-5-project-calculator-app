@@ -27,32 +27,32 @@ battery_full_alt
           <div class="flex justify-between">
             <button class="w-14 h-14 rounded-md bg-black text-[#40b1a1] text-xl" @click="getValue">AC</button>
             <button class="w-14 h-14 rounded-md bg-black text-[#40b1a1] text-xl" @click="getValue"><i class="fa-solid fa-delete-left"></i></button>
-            <button class="w-14 h-14 rounded-md bg-black text-[#9dcec7] text-xl" @click="getValue"><i class="fa-solid fa-percent"></i></button>
-            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue"><i class="fa-solid fa-divide"></i></button>
+            <button class="w-14 h-14 rounded-md bg-black text-[#9dcec7] text-xl" @click="getValue">%</button>
+            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue">/</button>
           </div>
           <div class="flex justify-between">
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">7</button>
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">8</button>
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">9</button>
-            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue"><i class="fa-solid fa-xmark"></i></button>
+            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue">x</button>
           </div>
           <div class="flex justify-between">
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">4</button>
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">5</button>
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">6</button>
-            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue"><i class="fa-solid fa-minus"></i></button>
+            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue">-</button>
           </div>
           <div class="flex justify-between">
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">1</button>
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">2</button>
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">3</button>
-            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue"><i class="fa-solid fa-plus"></i></button>
+            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue">+</button>
           </div>
           <div class="flex justify-between">
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue"><i class="fa-solid fa-repeat"></i></button>
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">0</button>
             <button class="w-14 h-14 rounded-md bg-black text-white text-xl" @click="getValue">.</button>
-            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue"><i class="fa-solid fa-equals"></i></button>
+            <button class="w-14 h-14 rounded-md bg-black text-[#e25089] text-xl" @click="getValue">=</button>
           </div>
         </section>
     </div>
@@ -93,19 +93,19 @@ export default defineComponent({
       if(e.target.innerText === '0'){
         this.userData += e.target.innerText
       }
-      if(e.target.classList.contains('fa-minus')){
+      if(e.target.innerText === '-'){
         this.userData += '-';
       }
-      if(e.target.classList.contains('fa-plus')){
+      if(e.target.innerText === '+'){
         this.userData += '+';
       }
-      if(e.target.classList.contains('fa-xmark')){
+      if(e.target.innerText === 'x'){
         this.userData += 'x';
       }
-      if(e.target.classList.contains('fa-divide')){
+      if(e.target.innerText === '/'){
         this.userData += '/';
       }
-      if(e.target.classList.contains('fa-percent')){
+      if(e.target.innerText === '%'){
         this.userData += '%';
       }
       if(e.target.classList.contains('fa-delete-left')){
@@ -113,7 +113,7 @@ export default defineComponent({
           this.userData = this.userData.slice(0, -1)
         }
         }
-      if(e.target.classList.contains('fa-equals')){
+      if(e.target.innerText === '='){
        // check if result includes the multiplication symbol
         if(this.userData.includes('x')){
           // replace the multiplication symbol with the multiplication sign
